@@ -22,7 +22,7 @@ plugins {
     id("org.jlleitschuh.gradle.ktlint") version "11.2.0"
 }
 
-group = "org.simplemc"
+group = "xyz.drewcification"
 version = scmVersion.version
 
 val mcApiVersion: String by project
@@ -72,6 +72,8 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
+    implementation("net.kyori:adventure-platform-bukkit:4.3.0")
+    implementation("net.kyori:adventure-text-minimessage:4.13.0")
     compileOnly(group = "org.spigotmc", name = "spigot-api", version = "$mcApiVersion+")
 }
 

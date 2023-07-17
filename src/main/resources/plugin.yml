@@ -1,8 +1,8 @@
-name: KotlinPluginTemplate
-main: org.simplemc.plugintemplate.KotlinPluginTemplate
+name: HardishRespawn
+main: xyz.drewcification.hardcorerespawn.HardcoreRespawn
 version: "${version}"
 api-version: "${apiVersion}"
-website: https://github.com/SimpleMC/mc-kotlin-plugin-template
-author: tajobe
+website: https://github.com/drewc5131/hardishcorerespawn
+author: drewcification
 libraries:
   - org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}
