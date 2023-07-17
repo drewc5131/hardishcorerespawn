@@ -21,7 +21,7 @@ class HardcoreRespawn : JavaPlugin() {
     private fun checkTime() {
         val overworld: World = server.worlds[0]
 
-        if(overworld.time in 0..100) {
+        if (overworld.time in 0..100) {
             logger.info("Doing respawn check => ${overworld.time}")
             // Get everyone who is in spectator mode currently
             val deadPlayers: List<Player> = server.onlinePlayers.filter { player: Player? -> player?.gameMode == GameMode.SPECTATOR }
