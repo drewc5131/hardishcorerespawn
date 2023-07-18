@@ -26,8 +26,10 @@ class HardcoreRespawn : JavaPlugin() {
             // Get everyone who is in spectator mode currently
             val deadPlayers: List<Player> = server.onlinePlayers.filter { player: Player? -> player?.gameMode == GameMode.SPECTATOR }
 
-            logger.info("Respawn check => No one is dead! Skipping the rest.")
-            if (deadPlayers.isEmpty()) return
+            if (deadPlayers.isEmpty()) {
+                logger.info("Respawn check => No one is dead! Skipping the rest.")
+                return
+            }
 
             val deadPlayersStr: String = deadPlayers.joinToString(", ") { player: Player -> player.name }
 
@@ -37,7 +39,7 @@ class HardcoreRespawn : JavaPlugin() {
             for (player: Player in deadPlayers) {
                 player.sendMessage("welcome black! don't die idiot")
                 player.gameMode = GameMode.SURVIVAL
-                player.teleport(Location(overworld, -533.5, 70.0, 248.5, 0f, 0f))
+                player.teleport(player.bedSpawnLocation ?: Location(overworld, -533.5, 70.0, 248.5, 0f, 0f))
             }
         }
     }
